@@ -1,0 +1,44 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+    background-color: #000000;
+    color: #ffffff;
+    font-family: 'Inter', sans-serif;
+    margin: 0;
+    -webkit-tap-highlight-color: transparent;
+}
+
+/* Scrollbar utilities */
+.hide-scrollbar::-webkit-scrollbar {
+    display: none;
+}
+.hide-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+/* Smooth animations for tab switching */
+.animate-in {
+    animation-duration: 300ms;
+    animation-fill-mode: both;
+}
+
+@keyframes fade-in {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slide-in-from-bottom {
+    from { transform: translateY(100%); }
+    to { transform: translateY(0); }
+}
+
+.fade-in {
+    animation-name: fade-in;
+}
+
+.slide-in-from-bottom {
+    animation-name: slide-in-from-bottom;
+}

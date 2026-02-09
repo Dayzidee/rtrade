@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { Share2 } from 'lucide-react';
 import PerformanceModal from './PerformanceModal';
@@ -21,12 +20,12 @@ const Overview: React.FC = () => {
   ];
 
   return (
-    <div className="p-4 space-y-6">
+    <div className="p-4 space-y-6 fade-in">
       {/* Stats Grid */}
       <div className="grid grid-cols-2 gap-3">
         {stats.map((stat, i) => (
-          <div key={i} className="bg-zinc-900/50 p-4 rounded-xl border border-zinc-800/50">
-            <p className="text-zinc-500 text-xs mb-1">{stat.label}</p>
+          <div key={i} className="bg-zinc-900 bg-opacity-50 p-4 rounded-xl border border-zinc-800 border-opacity-50">
+            <p className="text-zinc-500 text-xs mb-1 font-medium">{stat.label}</p>
             <h3 className={`text-xl font-bold ${stat.valueColor || 'text-white'}`}>{stat.value}</h3>
             <p className="text-zinc-600 text-[10px] mt-0.5">{stat.sub}</p>
           </div>
@@ -39,7 +38,7 @@ const Overview: React.FC = () => {
           <h2 className="text-lg font-bold text-white">Recent Activity</h2>
           <button 
             onClick={() => setShowPerformance(true)}
-            className="text-zinc-400 hover:text-white transition-colors"
+            className="text-zinc-400 hover:text-white transition-colors p-1"
           >
             <Share2 size={18} />
           </button>
@@ -47,7 +46,7 @@ const Overview: React.FC = () => {
 
         <div className="space-y-3">
           {recentActivity.map((item, i) => (
-            <div key={i} className="bg-zinc-900/40 border border-zinc-800/50 rounded-xl p-4 flex flex-col gap-1 relative overflow-hidden">
+            <div key={i} className="bg-zinc-900 bg-opacity-40 border border-zinc-800 border-opacity-50 rounded-xl p-4 flex flex-col gap-1 relative overflow-hidden">
                <div className="flex justify-between items-start">
                   <span className="text-zinc-600 text-xs font-medium">{item.date}</span>
                   <span className="text-[#00e676] text-[10px] font-bold uppercase tracking-wider">filled</span>
