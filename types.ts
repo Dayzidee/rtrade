@@ -56,3 +56,21 @@ export interface OptionFlowItem {
   expiry: string;
   color: string;
 }
+
+export interface AlgoEdgeItem {
+  id: string;
+  ticker: string;
+  signal: 'Bullish' | 'Bearish' | 'Neutral';
+  confidence: number;
+  timestamp: string;
+  price: number;
+  target?: number;
+}
+
+export interface TreemapItem {
+  id: string;
+  ticker: string;
+  change: number;
+  sector: string;
+  volume: string;
+}
